@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Biodata Siswa</title>
+
+<style>
+body {
+    font-family: Arial;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+h2 {
+    text-align: center;
+    color: darkblue;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Form Biodata Siswa</h2>
+
+<form>
+
+Nama Lengkap :
+<input type="text" id="nama">
+
+Jenis Kelamin :
+<br>
+<input type="radio" name="jk" value="Laki-laki"> Laki-laki
+<input type="radio" name="jk" value="Perempuan"> Perempuan
+<br><br>
+
+Usia :
+<input type="number" id="usia">
+
+Kelas :
+<input type="text" id="kelas">
+
+Cabor :
+<input type="text" id="cabor">
+
+Cita-cita :
+<input type="text" id="cita">
+
+<button type="button" onclick="tampilData()">Kirim</button>
+
+</form>
+
+<hr>
+
+<h3>Hasil Biodata</h3>
+<p id="hasil"></p>
+
+</div>
+
+<script>
+function tampilData(){
+
+var nama = document.getElementById("nama").value;
+var usia = document.getElementById("usia").value;
+var kelas = document.getElementById("kelas").value;
+var cabor = document.getElementById("cabor").value;
+var cita = document.getElementById("cita").value;
+
+var jk = document.querySelector('input[name="jk"]:checked').value;
+
+document.getElementById("hasil").innerHTML =
+"Nama : " + nama + "<br>" +
+"Jenis Kelamin : " + jk + "<br>" +
+"Usia : " + usia + "<br>" +
+"Kelas : " + kelas + "<br>" +
+"Cabor : " + cabor + "<br>" +
+"Cita-cita : " + cita;
+}
+</script>
+
+</body>
+</html>
